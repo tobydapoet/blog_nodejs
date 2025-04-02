@@ -1,14 +1,18 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/tobydapoet/blog_nodejs.git",
   "scripts": {
-    "start": "node --watch --inspect index.js"
+    "start": "node --watch --inspect src/index.js",
+    "watch": "sass src/resources/scss:src/public/css --watch"
   },
   "author": "Toby",
   "license": "MIT",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.1",
+    "morgan": "^1.10.0",
+    "sass": "^1.86.1"
   }
 }
