@@ -1,0 +1,14 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tobydapoet/blog_nodejs.git",
+  "scripts": {
+    "start": "node --watch --inspect index.js"
+  },
+  "author": "Toby",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
