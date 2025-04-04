@@ -3,7 +3,10 @@ import { engine } from "express-handlebars";
 import morgan from "morgan";
 import { fileURLToPath } from "url";
 import path from "path";
-import route from './routes/index.js'
+import route from "./routes/index.js";
+import connect from "./config/db/connect.js";
+
+connect();
 
 const app = express();
 const port = 3000;
@@ -23,10 +26,10 @@ app.engine(
   })
 );
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "resources/views"));
+app.set("views", path.join(__dirname, "resources", "views"));
 
-route(app)
+route(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`App listening on port ${port}`);
 });

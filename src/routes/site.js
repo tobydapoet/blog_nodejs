@@ -6,5 +6,4 @@ const router = express.Router();
 router.get("/search", siteController.search)
 router.get("/", siteController.index);
 
-
 export default router;

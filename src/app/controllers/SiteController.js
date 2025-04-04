@@ -1,15 +1,22 @@
+import Course from "../models/Course.js";
+import {
+  multipleMongooseToObject,
+  mongooseToObject,
+} from "../../util/mongoose.js";
+
 class SiteController {
-  //[GET] /home
-  index(req, res) {
-    res.render("home");
+  index(req, res, next) {
+    Course.find({})
+      .then((courses) => {
+        res.render("home", { courses: multipleMongooseToObject(courses) });
+      })
+      .catch(next);
   }
 
   //[GET] /search
-  search(req,res) {
+  search(req, res) {
     res.render("search");
   }
 }
 
-
-
-export default new SiteController
+export default new SiteController();
